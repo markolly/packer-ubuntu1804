@@ -16,9 +16,6 @@ The following software is required before you can use Packer to build the Vagran
   - [Vagrant](http://vagrantup.com/) (Tested on v2.1.5)
   - [VirtualBox](https://www.virtualbox.org/) (Tested on v5.2.20)
 
-## Ruby
-Puppet 3 is currently being used which requires ruby-2.1.10 or lower for it to function correctly
-
 ## Make
 To "make" life simpler there is a Makefile with some bundled commands. More information about the commands can be found out by running "make help".
 ```
@@ -30,6 +27,12 @@ the help menu
   make clean         Force destruction of vagrant VM(s)
   make prune         Delete image(s) created by packer
   make test          Not implemented
+```
+
+## Versioning
+By default the verison tag is in the fomat of DDMMYYYY.0. The version number can be altered by specifing it at build time
+```
+make version=3 packer
 ```
 
 #### Notes
