@@ -2,7 +2,16 @@
   "variables": {
     "cloud_token": "{{ env `ATLAS_TOKEN` }}",
     "version_date": "{{ isotime \"02012006\" }}",
-    "version_tag": "0"
+    "version_tag": "0",
+    "compression_level": "8",
+    "cpus": "1",
+    "disk_size": "81920",
+    "headless": "true",
+    "iso_checksum_type": "sha256",
+    "iso_checksum": "a5b0ea5918f850124f3d72ef4b85bda82f0fcd02ec721be19c1a6952791c8ee8",
+    "memory": "1024",
+    "mirror": "http://cdimage.ubuntu.com/ubuntu/releases",
+    "ssh_timeout": "10000s"
   },
   "builders": [
     {
@@ -33,37 +42,27 @@
         "<enter><wait>"
       ],
       "boot_wait": "10s",
-      "disk_size": 81920,
+      "disk_size": "{{user `disk_size`}}",
       "guest_os_type": "Ubuntu_64",
-      "headless": true,
+      "headless": "{{user `headless`}}",
       "http_directory": "http",
       "iso_urls": [
         "iso/ubuntu-18.04.1-server-amd64.iso",
-        "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.1-server-amd64.iso"
+        "{{user `mirror`}}/bionic/release/ubuntu-18.04.1-server-amd64.iso"
       ],
-      "iso_checksum_type": "sha256",
-      "iso_checksum": "a5b0ea5918f850124f3d72ef4b85bda82f0fcd02ec721be19c1a6952791c8ee8",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
-      "ssh_wait_timeout": "10000s",
+      "ssh_wait_timeout": "{{user `ssh_timeout`}}",
       "shutdown_command": "echo 'vagrant'|sudo -S shutdown -P now",
       "guest_additions_path": "VBoxGuestAdditions_{{.Version}}.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-ubuntu-18.04-amd64",
       "vboxmanage": [
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--memory",
-          "1024"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--cpus",
-          "1"
-        ]
+        ["modifyvm", "{{.Name}}", "--memory", "{{user `memory`}}"],
+        ["modifyvm", "{{.Name}}", "--cpus", "{{user `cpus`}}"]
       ]
     }
   ],
@@ -96,7 +95,7 @@
       {
         "output": "builds/{{.Provider}}-ubuntu1804.box",
         "type": "vagrant",
-        "compression_level": "8"
+        "compression_level": "{{user `compression_level`}}"
       },
       {
         "type": "vagrant-cloud",
