@@ -34,6 +34,5 @@ help:
 	@echo "  make start         Equivalent to vagrant up"
 	@echo "  make clean         Force destruction of vagrant VM(s)"
 	@echo "  make prune         Delete image(s) created by packer"
-	@echo "  make test          Not implemented"
 
 .PHONY: install start build clean prune test
