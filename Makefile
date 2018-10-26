@@ -27,10 +27,6 @@ prune:
 	@echo "Deleting VM image..."
 	@vagrant box remove file://builds/virtualbox-ubuntu1804.box
 
-test:
-	@echo "Running Serverspec tests..."
-	@rake spec
-
 help:
 	@echo "the help menu"
 	@echo "  make install       Install dependencies"

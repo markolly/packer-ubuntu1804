@@ -26,7 +26,6 @@ the help menu
   make start         Equivalent to vagrant up
   make clean         Force destruction of vagrant VM(s)
   make prune         Delete image(s) created by packer
-  make test          Not implemented
 ```
 
 ## Versioning
