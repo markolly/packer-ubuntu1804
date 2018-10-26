@@ -1,0 +1,12 @@
+packer_cache/*
+*.box
+iso/*
+.librarian/*
+.vagrant/*
+.DS_Store
+output-virtualbox-iso/*
+Puppetfile.lock
+Gemfile.lock
+.tmp/*
+builds/*
+puppet/modules/*
