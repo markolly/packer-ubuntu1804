@@ -9,8 +9,8 @@ stage { 'pre':
     before => Stage['main']
 }
 
-# Add the baseconfig module to the new 'pre' run stage
-class { 'baseconfig':
+# Add the base module to the new 'pre' run stage
+class { 'vagrant::base':
     stage => 'pre'
 }
 
@@ -21,6 +21,6 @@ File {
     mode  => '0644',
 }
 
-include baseconfig
-include packer::vagrant
-include packer::vboxguest
+include vagrant::base
+include vagrant::ssh
+include vagrant::vboxguest
