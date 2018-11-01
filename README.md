@@ -1,4 +1,4 @@
-# Packer Example - Ubuntu 18.04.1 minimal Vagrant Box
+# Packer generated Ubuntu 18.04.1 minimal Vagrant Box
 
 This build installs and configures Ubuntu 18.04.1 minimal using Puppet, and then generates a Vagrant box file for VirtualBox.
 
