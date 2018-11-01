@@ -3,7 +3,7 @@
 
 forge "https://forgeapi.puppetlabs.com"
 
-mod 'puppetlabs-stdlib'
-mod 'maestrodev-wget'
-mod 'puppet-debian-vagrant',
-  :git => 'git@github.com:markolly/puppet-debian-vagrant'
+mod 'puppetlabs-stdlib', '>= 5.1.0'
+mod 'maestrodev-wget', '>= 1.7.3'
+mod 'puppet-debian_vagrant',
+  :git => 'git@github.com:markolly/puppet-debian_vagrant'

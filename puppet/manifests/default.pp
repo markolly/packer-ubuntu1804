@@ -10,7 +10,7 @@ stage { 'pre':
 }
 
 # Add the base module to the new 'pre' run stage
-class { 'vagrant::base':
+class { 'debian_vagrant::base':
     stage => 'pre'
 }
 
@@ -21,6 +21,6 @@ File {
     mode  => '0644',
 }
 
-include vagrant::base
-include vagrant::ssh
-include vagrant::vboxguest
+include debian_vagrant::base
+include debian_vagrant::ssh
+include debian_vagrant::vboxguest
