@@ -1,13 +1,10 @@
-# Packer generated Ubuntu 18.04.1 minimal Vagrant Box
-
+# Ubuntu 18.04.1 minimal Vagrant Box using Packer
 This build installs and configures Ubuntu 18.04.1 minimal using Puppet, and then generates a Vagrant box file for VirtualBox.
 
 ## Ready-made Vagrant Box
-
 - [`vagrant init markolly/ubuntu1804`](https://app.vagrantup.com/markolly/boxes/ubuntu1804)
 
 ## Requirements
-
 The following software is required before you can use Packer to build the Vagrant image file:
   
   - [Ruby](https://www.ruby-lang.org/) (Tested on 2.1.10<)
