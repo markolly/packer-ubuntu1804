@@ -26,7 +26,7 @@ the help menu
 ```
 
 ## Versioning
-By default the version tag is in the format of DDMMYYYY.0. The version number can be altered by specifying it at build time
+By default the version tag is in the format of YYYYMMDD.0. The version number can be altered by specifying it at build time
 ```
 make version=3 packer
 ```
