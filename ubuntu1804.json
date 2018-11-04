@@ -29,7 +29,7 @@
         " debian-installer=en_GB<wait>",
         " fb=false<wait>",
         " initrd=/install/initrd.gz<wait>",
-        " kbd-chooser/method=us<wait>",
+        " kbd-chooser/method=gb<wait>",
         " keyboard-configuration/layout=gb<wait>",
         " keyboard-configuration/variant=gb<wait>",
         " locale=en_GB<wait>",
