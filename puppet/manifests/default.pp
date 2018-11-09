@@ -21,6 +21,5 @@ File {
     mode  => '0644',
 }
 
-include debian_vagrant::base
 include debian_vagrant::ssh
 include debian_vagrant::vboxguest
