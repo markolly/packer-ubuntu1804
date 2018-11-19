@@ -1,7 +1,7 @@
 {
   "variables": {
     "cloud_token": "{{ env `ATLAS_TOKEN` }}",
-    "version_date": "{{ isotime \"20061202\" }}",
+    "version_date": "{{ isotime \"20060102\" }}",
     "version_tag": "0",
     "compression_level": "8",
     "cpus": "1",
